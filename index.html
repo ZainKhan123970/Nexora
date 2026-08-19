@@ -4,7 +4,32 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>NEXORA — Build Smarter. Grow Faster.</title>
+  <meta name="description" content="NEXORA is an AI-powered digital agency crafting high-performance websites, AI agents, mobile apps and stunning UI/UX designs that help businesses build smarter and grow faster."/>
+  <meta name="keywords" content="web development agency, AI agents, AI automation, UI UX design, mobile app development, wireframing, performance optimization, Nexora"/>
+  <meta name="author" content="NEXORA"/>
+  <meta name="robots" content="index, follow"/>
+  <meta name="theme-color" content="#0B0F19"/>
+  <meta property="og:title" content="NEXORA — Build Smarter. Grow Faster."/>
+  <meta property="og:description" content="AI-powered digital agency for websites, AI agents, mobile apps and UI/UX design."/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:locale" content="en_US"/>
+  <meta name="twitter:card" content="summary"/>
+  <meta name="twitter:title" content="NEXORA — Build Smarter. Grow Faster."/>
+  <meta name="twitter:description" content="AI-powered digital agency for websites, AI agents, mobile apps and UI/UX design."/>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%A4%96%3C/text%3E%3C/svg%3E"/>
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"ProfessionalService",
+    "name":"NEXORA",
+    "description":"AI-powered digital agency offering web development, AI agents, UI/UX design, wireframing, mobile app development and performance optimization.",
+    "email":"nexora.official24.7@gmail.com",
+    "telephone":["+923012681336","+18026108405"],
+    "areaServed":"Worldwide",
+    "sameAs":["https://www.instagram.com/nexora24_7/"]
+  }
+  </script>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
@@ -23,6 +48,12 @@
     #particle-canvas { position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:0;opacity:.5; }
     ::-webkit-scrollbar{width:5px} ::-webkit-scrollbar-track{background:var(--bg2)} ::-webkit-scrollbar-thumb{background:var(--grad);border-radius:10px}
     body::before { content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");pointer-events:none;z-index:0;opacity:.4; }
+
+    /* pageWrap freezes/blurs when a modal is open */
+    #pageWrap { transition: filter .35s ease, transform .35s ease; }
+    body.modal-open { overflow:hidden; }
+    body.modal-open #pageWrap { filter:blur(6px); transform:scale(0.99); pointer-events:none; user-select:none; }
+
     nav { position:fixed;top:0;width:100%;z-index:100;padding:20px 60px;display:flex;align-items:center;justify-content:space-between;background:rgba(11,15,25,.65);backdrop-filter:blur(20px);border-bottom:1px solid rgba(139,92,246,.15);transition:border-color .3s; }
     .nav-logo { font-family:'Syne',sans-serif;font-size:1.6rem;font-weight:800;letter-spacing:.07em;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;text-decoration:none; }
     .nav-links { display:flex;gap:36px;list-style:none; }
@@ -56,8 +87,11 @@
     @keyframes blink { 0%,100%{opacity:1} 50%{opacity:.3} }
     h1 { font-family:'Syne',sans-serif;font-size:clamp(2.8rem,6vw,5rem);font-weight:800;line-height:1.05;letter-spacing:-.03em;animation:fadeUp .8s .1s ease both; }
     .grad-text { background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent; }
-    .hero-sub { color:var(--gray);font-size:1.05rem;line-height:1.7;margin:24px 0 40px;max-width:520px;animation:fadeUp .8s .2s ease both; }
+    .hero-sub { color:var(--gray);font-size:1.05rem;line-height:1.7;margin:24px 0 32px;max-width:520px;animation:fadeUp .8s .2s ease both; }
     .hero-btns { display:flex;gap:16px;flex-wrap:wrap;animation:fadeUp .8s .3s ease both; }
+    .hero-trust { display:flex;gap:22px;flex-wrap:wrap;margin-top:28px;animation:fadeUp .8s .35s ease both; }
+    .hero-trust span { font-size:.8rem;color:var(--gray);display:flex;align-items:center;gap:6px; }
+    .hero-trust span b { color:var(--blue);font-weight:700; }
     .btn-primary { background:var(--grad);color:#fff;border:none;padding:14px 32px;border-radius:10px;font-family:'DM Sans',sans-serif;font-weight:600;font-size:.95rem;text-decoration:none;display:inline-flex;align-items:center;gap:8px;box-shadow:0 0 30px rgba(59,130,246,.35);transition:transform .25s,box-shadow .25s;cursor:pointer; }
     .btn-primary:hover { transform:scale(1.05) translateY(-2px);box-shadow:0 0 50px rgba(59,130,246,.6),0 0 80px rgba(139,92,246,.3); }
     .btn-primary .arrow { transition:transform .25s; }
@@ -90,19 +124,22 @@
     .services-header { text-align:center;margin-bottom:64px; }
     .services-header .section-sub { margin:0 auto; }
     .services-grid { display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px;max-width:1200px;margin:0 auto; }
-    .service-card { background:rgba(17,24,39,.8);border:1px solid rgba(255,255,255,.07);border-radius:20px;padding:36px;position:relative;overflow:hidden;transition:transform .3s,border-color .3s,box-shadow .3s; }
+
+    /* Service cards: base state stays calm; enhanced hover only applies once "armed" (after ~0.1s dwell) */
+    .service-card { background:rgba(17,24,39,.8);border:1px solid rgba(255,255,255,.07);border-radius:20px;padding:36px;position:relative;overflow:hidden;cursor:pointer;transition:border-color .3s,box-shadow .3s;transform-style:preserve-3d;will-change:transform; }
     .service-card::before { content:'';position:absolute;inset:0;background:var(--grad);opacity:0;transition:opacity .3s; }
-    .service-card:hover { transform:translateY(-8px) scale(1.02);border-color:rgba(59,130,246,.4);box-shadow:0 20px 60px rgba(59,130,246,.2),0 0 0 1px rgba(139,92,246,.2); }
-    .service-card:hover::before { opacity:.04; }
-    .service-card { transform-style:preserve-3d;will-change:transform; }
+    .service-card.armed { border-color:rgba(59,130,246,.4);box-shadow:0 20px 60px rgba(59,130,246,.2),0 0 0 1px rgba(139,92,246,.2); }
+    .service-card.armed::before { opacity:.04; }
     .service-card .shimmer { position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(circle at var(--mx,50%) var(--my,50%),rgba(59,130,246,.08) 0%,transparent 60%);pointer-events:none;opacity:0;transition:opacity .3s; }
-    .service-card:hover .shimmer { opacity:1; }
+    .service-card.armed .shimmer { opacity:1; }
     .service-icon { width:56px;height:56px;background:rgba(59,130,246,.1);border:1px solid rgba(59,130,246,.2);border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:1.6rem;margin-bottom:20px;transition:transform .3s,box-shadow .3s; }
-    .service-card:hover .service-icon { transform:scale(1.15);box-shadow:0 0 20px rgba(59,130,246,.4); }
+    .service-card.armed .service-icon { transform:scale(1.15);box-shadow:0 0 20px rgba(59,130,246,.4); }
     .service-title { font-family:'Syne',sans-serif;font-size:1.1rem;font-weight:700;margin-bottom:10px; }
     .service-desc { color:var(--gray);font-size:.9rem;line-height:1.6; }
     .service-arrow { position:absolute;bottom:28px;right:28px;width:32px;height:32px;border-radius:50%;background:rgba(59,130,246,.1);display:flex;align-items:center;justify-content:center;color:var(--blue);font-size:.85rem;transition:background .3s,transform .3s; }
-    .service-card:hover .service-arrow { background:var(--blue);color:#fff;transform:translate(3px,-3px); }
+    .service-card.armed .service-arrow { background:var(--blue);color:#fff;transform:translate(3px,-3px); }
+    .service-card:focus-visible { outline:2px solid var(--blue);outline-offset:3px; }
+
     .about { background:rgba(17,24,39,.3); }
     .about-inner { display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;max-width:1200px;margin:0 auto; }
     .about-visual { position:relative;height:500px; }
@@ -138,23 +175,89 @@
     .step-num::after { content:'';position:absolute;inset:-8px;border-radius:50%;border:1.5px solid rgba(59,130,246,.4);animation:pulseRing 2s ease-out infinite;opacity:0; }
     .step:hover .step-num::after { opacity:1; }
     @keyframes pulseRing { 0%{transform:scale(1);opacity:.6} 100%{transform:scale(1.5);opacity:0} }
-    .projects-grid { display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px;max-width:1200px;margin:60px auto 0; }
-    .project-preview { width:100%;height:180px;border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:20px;position:relative;overflow:hidden; }
-    .project-preview .live-badge { position:absolute;top:10px;right:10px;border-radius:20px;padding:3px 10px;font-size:.7rem;letter-spacing:1px; }
-    .project-tags { display:flex;flex-wrap:wrap;gap:6px;margin-bottom:20px; }
+
+    .project-tags { display:flex;flex-wrap:wrap;gap:6px; }
     .project-tag { border-radius:20px;padding:2px 10px;font-size:.72rem; }
     .tag-blue { background:rgba(59,130,246,.1);border:1px solid rgba(59,130,246,.2);color:#3B82F6; }
     .tag-purple { background:rgba(139,92,246,.1);border:1px solid rgba(139,92,246,.2);color:#8B5CF6; }
+
+    /* ── Coverflow project carousel ─────────────────────────────────── */
+    .cf-wrap { --cf-card: clamp(200px, 32vw, 320px); position:relative;max-width:1100px;margin:60px auto 0; }
+    .cf-frame { cursor:grab;overflow:hidden;padding:36px 0 6px;outline:none;touch-action:pan-y;perspective:calc(var(--cf-card) * 3); }
+    .cf-frame:active { cursor:grabbing; }
+    .cf-frame:focus-visible { outline:2px solid var(--blue);outline-offset:6px;border-radius:14px; }
+    .cf-track { position:relative;height:var(--cf-card);transform-style:preserve-3d;user-select:none; }
+    .cf-card { position:absolute;left:50%;top:0;width:var(--cf-card);aspect-ratio:1/1;border-radius:20px;overflow:hidden;border:1px solid rgba(255,255,255,.08);box-shadow:0 20px 50px rgba(0,0,0,.45);will-change:transform;transition:box-shadow .3s; }
+    .cf-card.is-active { box-shadow:0 25px 70px rgba(59,130,246,.35),0 0 0 2px rgba(59,130,246,.35); }
+    .cf-card-inner { width:100%;height:100%;display:flex;align-items:center;justify-content:center;position:relative; }
+    .cf-card-content { text-align:center;pointer-events:none; }
+    .cf-card-emoji { font-size:2.6rem;margin-bottom:8px; }
+    .cf-card-brand { font-family:'Syne',sans-serif;font-weight:700;font-size:1.1rem;letter-spacing:2px; }
+    .cf-card-sub { font-size:.7rem;letter-spacing:3px;margin-top:4px; }
+    .cf-card-badge { position:absolute;top:12px;right:12px;border-radius:20px;padding:3px 10px;font-size:.68rem;letter-spacing:1px;pointer-events:none; }
+    .cf-nav { position:absolute;top:50%;transform:translateY(-50%);z-index:200;width:44px;height:44px;border-radius:50%;background:rgba(17,24,39,.75);border:1px solid rgba(59,130,246,.25);color:var(--white);font-size:1.3rem;display:flex;align-items:center;justify-content:center;cursor:pointer;backdrop-filter:blur(6px);transition:background .25s,border-color .25s,transform .25s; }
+    .cf-nav:hover { background:rgba(59,130,246,.25);border-color:var(--blue);transform:translateY(-50%) scale(1.08); }
+    .cf-nav-prev { left:-6px; }
+    .cf-nav-next { right:-6px; }
+    .cf-dots { display:flex;justify-content:center;gap:8px;margin-top:22px; }
+    .cf-dot { width:8px;height:8px;border-radius:50%;background:var(--white);opacity:.25;border:none;cursor:pointer;padding:0;transition:opacity .25s,transform .25s,background .25s; }
+    .cf-dot.is-active { opacity:1;transform:scale(1.35);background:var(--blue); }
+    .cf-caption { max-width:640px;margin:34px auto 0;text-align:center; }
+    .cf-caption-title { font-family:'Syne',sans-serif;font-weight:700;font-size:1.15rem;margin-bottom:10px; }
+    .cf-caption-desc { color:var(--gray);font-size:.9rem;line-height:1.65;margin-bottom:18px; }
+    .cf-caption-tags { display:flex;justify-content:center;flex-wrap:wrap;gap:6px;margin-bottom:24px; }
+    .cf-caption-in { animation:fadeUp .5s ease both; }
+    @media(max-width:900px){ .cf-nav{ display:none; } }
+
+    /* ── Service detail modal ───────────────────────────────────────── */
+    .modal-overlay { position:fixed;inset:0;background:rgba(6,8,14,.72);backdrop-filter:blur(4px);display:flex;align-items:center;justify-content:center;padding:24px;z-index:9000;opacity:0;visibility:hidden;transition:opacity .3s ease; }
+    .modal-overlay.active { opacity:1;visibility:visible; }
+    .modal-box { background:rgba(17,24,39,.97);border:1px solid rgba(59,130,246,.25);border-radius:24px;padding:40px;max-width:480px;width:100%;position:relative;transform:scale(.9) translateY(10px);transition:transform .35s cubic-bezier(.22,1,.36,1);box-shadow:0 30px 80px rgba(0,0,0,.5),0 0 60px rgba(59,130,246,.15);max-height:85vh;overflow-y:auto; }
+    .modal-overlay.active .modal-box { transform:scale(1) translateY(0); }
+    .modal-close { position:absolute;top:18px;right:18px;width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);color:var(--gray);display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:1rem;transition:.2s; }
+    .modal-close:hover { background:rgba(59,130,246,.2);color:#fff;border-color:var(--blue); }
+    .modal-icon-wrap { width:64px;height:64px;border-radius:16px;background:rgba(59,130,246,.1);border:1px solid rgba(59,130,246,.25);display:flex;align-items:center;justify-content:center;font-size:1.9rem;margin-bottom:22px; }
+    .modal-title { font-family:'Syne',sans-serif;font-size:1.4rem;font-weight:800;margin-bottom:12px; }
+    .modal-desc { color:var(--gray);font-size:.92rem;line-height:1.7;margin-bottom:22px; }
+    .modal-highlights { list-style:none;display:flex;flex-direction:column;gap:10px;margin-bottom:28px; }
+    .modal-highlights li { display:flex;align-items:flex-start;gap:10px;font-size:.86rem;color:#e5e7eb;line-height:1.5; }
+    .modal-highlights li::before { content:'✓';color:var(--blue);font-weight:700;flex-shrink:0; }
+
+    /* ── CTA / Contact ─────────────────────────────────────────────── */
     .cta-section { text-align:center;padding:120px 60px;background:radial-gradient(ellipse at center,rgba(59,130,246,.08) 0%,transparent 70%);position:relative;overflow:hidden; }
     .cta-section::before { content:'NEXORA';font-family:'Syne',sans-serif;font-size:18vw;font-weight:800;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;opacity:.04;white-space:nowrap;pointer-events:none; }
     .cta-inner { background:rgba(17,24,39,.8);backdrop-filter:blur(20px);border:1px solid rgba(59,130,246,.2);border-radius:28px;padding:70px;max-width:800px;margin:0 auto;box-shadow:0 0 80px rgba(59,130,246,.1);position:relative;overflow:hidden; }
     .cta-inner::before { content:'';position:absolute;inset:-1px;border-radius:28px;padding:1px;background:linear-gradient(90deg,#3B82F6,#8B5CF6,#3B82F6);background-size:200% 100%;animation:borderSlide 3s linear infinite;-webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);-webkit-mask-composite:xor;mask-composite:exclude;pointer-events:none; }
     @keyframes borderSlide { 0%{background-position:0% 0%} 100%{background-position:200% 0%} }
     .cta-inner h2 { font-family:'Syne',sans-serif;font-size:clamp(2rem,4vw,3rem);font-weight:800;margin-bottom:16px; }
-    .cta-inner p { color:var(--gray);font-size:1rem;margin-bottom:40px; }
-    .cta-btns { display:flex;gap:16px;justify-content:center;flex-wrap:wrap; }
-    .btn-email { display:inline-flex;align-items:center;gap:8px;background:transparent;border:1px solid rgba(59,130,246,.4);color:var(--blue);padding:14px 28px;border-radius:10px;font-family:'DM Sans',sans-serif;font-size:.9rem;text-decoration:none;transition:background .25s,transform .25s,border-color .25s;cursor:pointer; }
-    .btn-email:hover { background:rgba(59,130,246,.1);transform:scale(1.05);border-color:var(--blue); }
+    .cta-inner p { color:var(--gray);font-size:1rem;margin-bottom:0; }
+
+    .contact-quick { display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:14px;margin:40px 0 0;text-align:left; }
+    .quick-card { display:flex;flex-direction:column;gap:4px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:16px 18px;text-decoration:none;transition:border-color .25s,background .25s,transform .25s; }
+    .quick-card:hover { border-color:rgba(59,130,246,.4);background:rgba(59,130,246,.06);transform:translateY(-3px); }
+    .quick-icon { font-size:1.25rem; }
+    .quick-label { font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;color:var(--gray);margin-top:6px; }
+    .quick-value { font-family:'Syne',sans-serif;font-weight:700;font-size:.92rem;color:var(--white);word-break:break-word; }
+
+    .contact-divider { display:flex;align-items:center;gap:16px;margin:44px 0 8px;color:var(--gray);font-size:.75rem;letter-spacing:.08em;text-transform:uppercase; }
+    .contact-divider::before, .contact-divider::after { content:'';flex:1;height:1px;background:rgba(255,255,255,.08); }
+
+    .whatsapp-form-wrap { text-align:left;background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.07);border-radius:20px;padding:40px;margin-top:8px; }
+    .wa-tag { font-size:.72rem;letter-spacing:.15em;color:var(--purple);font-weight:700;text-transform:uppercase;margin-bottom:10px;display:flex;align-items:center;gap:8px; }
+    .wa-tag::before { content:'';width:16px;height:2px;background:var(--purple);display:inline-block; }
+    .wa-heading { font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(1.5rem,3.2vw,2.1rem);margin-bottom:26px;line-height:1.15; }
+    .wa-form { display:flex;flex-direction:column;gap:18px; }
+    .wa-row { display:grid;grid-template-columns:1fr 1fr;gap:18px; }
+    .wa-field label { display:block;font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;color:var(--gray);margin-bottom:8px;font-weight:600; }
+    .wa-field input, .wa-field select, .wa-field textarea { width:100%;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.12);border-radius:10px;padding:13px 16px;color:var(--white);font-family:'DM Sans',sans-serif;font-size:.9rem;transition:border-color .25s,background .25s; }
+    .wa-field input::placeholder, .wa-field textarea::placeholder { color:#5b6472; }
+    .wa-field input:focus, .wa-field select:focus, .wa-field textarea:focus { outline:none;border-color:var(--blue);background:rgba(59,130,246,.05); }
+    .wa-field textarea { resize:vertical;min-height:96px; }
+    .wa-field select { appearance:none;-webkit-appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='%239CA3AF'%3E%3Cpath d='M5.5 7.5l4.5 4.5 4.5-4.5'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;background-size:16px;padding-right:40px; }
+    .wa-submit { background:var(--grad);color:#fff;border:none;padding:16px;border-radius:10px;font-family:'Syne',sans-serif;font-weight:700;font-size:.92rem;letter-spacing:.03em;cursor:pointer;box-shadow:0 0 30px rgba(59,130,246,.3);transition:transform .25s,box-shadow .25s;margin-top:4px; }
+    .wa-submit:hover { transform:scale(1.02) translateY(-2px);box-shadow:0 0 45px rgba(59,130,246,.55),0 0 70px rgba(139,92,246,.3); }
+    .wa-note { font-size:.76rem;color:var(--gray);text-align:center;margin-top:14px;line-height:1.55; }
+
     footer { background:var(--bg2);border-top:1px solid rgba(255,255,255,.06);padding:60px;position:relative;z-index:1; }
     .footer-top { display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:40px;margin-bottom:50px; }
     .footer-brand .nav-logo { font-size:1.8rem;display:block;margin-bottom:12px; }
@@ -165,6 +268,8 @@
     .footer-links a:hover { color:var(--white); }
     .footer-email { color:var(--blue)!important;display:flex;align-items:center;gap:6px;cursor:pointer; }
     .footer-email:hover { color:var(--purple)!important; }
+    .footer-phone { color:var(--purple)!important;display:flex;align-items:center;gap:6px; }
+    .footer-phone:hover { color:var(--blue)!important; }
     .footer-bottom { border-top:1px solid rgba(255,255,255,.05);padding-top:30px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px; }
     .footer-bottom p { color:var(--gray);font-size:.8rem; }
     .footer-socials { display:flex;gap:12px; }
@@ -183,7 +288,9 @@
       section{padding:80px 24px} .stats{padding:40px 24px;gap:40px}
       .about-inner{grid-template-columns:1fr;gap:40px} .about-visual{height:300px}
       .card-stat,.card-badge{display:none} .process-steps::before{display:none}
-      .cta-inner{padding:40px 24px} footer{padding:40px 24px} .footer-top{flex-direction:column}
+      .cta-inner{padding:36px 22px} .whatsapp-form-wrap{padding:26px 20px}
+      .wa-row{grid-template-columns:1fr}
+      footer{padding:40px 24px} .footer-top{flex-direction:column}
     }
   </style>
 </head>
@@ -198,6 +305,9 @@
   <svg viewBox="0 0 36 36" fill="none"><defs><linearGradient id="sg" x1="0" y1="0" x2="36" y2="36" gradientUnits="userSpaceOnUse"><stop stop-color="#3B82F6" stop-opacity=".55"/><stop offset="1" stop-color="#8B5CF6" stop-opacity=".55"/></linearGradient></defs><circle cx="18" cy="18" r="17" stroke="url(#sg)" stroke-width="1.2" fill="rgba(59,130,246,.04)"/></svg>
 </div>
 <div id="nx-label"></div>
+
+<!-- everything that should blur/freeze when a modal is open lives inside #pageWrap -->
+<div id="pageWrap">
 
 <!-- NAV -->
 <nav id="navbar">
@@ -236,13 +346,18 @@
       <a onclick="openEmail('New Project Inquiry','Hi Nexora Team, I would like to start a new project with you.')" class="btn-primary">Get Started <span class="arrow">→</span></a>
       <a href="#services" class="btn-secondary">Explore Services</a>
     </div>
+    <div class="hero-trust">
+      <span aria-hidden="true">✓</span><span>Free consultation</span>
+      <span aria-hidden="true">✓</span><span>Response within 24 hours</span>
+      <span aria-hidden="true">✓</span><span>NDA on request</span>
+    </div>
   </div>
   <div class="hero-visual">
     <div class="hero-ring ring1"></div>
     <div class="hero-ring ring2"></div>
     <div class="hero-ring ring3"></div>
     <div class="tech-orbit" id="techOrbit"></div>
-    <div class="hero-core">🤖</div>
+    <div class="hero-core" aria-hidden="true">🤖</div>
   </div>
 </section>
 
@@ -259,15 +374,15 @@
   <div class="services-header reveal">
     <div class="section-tag">What we do</div>
     <h2 class="section-title">Services Built for <span class="grad-text">Growth</span></h2>
-    <p class="section-sub">From concept to launch, we deliver end-to-end digital solutions tailored to your business goals.</p>
+    <p class="section-sub">From concept to launch, we deliver end-to-end digital solutions tailored to your business goals. Tap any service to see exactly what's included.</p>
   </div>
   <div class="services-grid">
-    <div class="service-card reveal"><div class="shimmer"></div><div class="service-icon">🌐</div><div class="service-title">Web Development</div><p class="service-desc">Custom, high-performance websites built with modern tech stacks. Fast, secure, and fully responsive — crafted exactly to your requirements.</p><div class="service-arrow">→</div></div>
-    <div class="service-card reveal" style="transition-delay:.1s"><div class="shimmer"></div><div class="service-icon">🤖</div><div class="service-title">AI Agents</div><p class="service-desc">Intelligent automation agents that handle repetitive tasks, engage customers, generate leads, and supercharge your business workflows.</p><div class="service-arrow">→</div></div>
-    <div class="service-card reveal" style="transition-delay:.2s"><div class="shimmer"></div><div class="service-icon">🎨</div><div class="service-title">UI/UX Design</div><p class="service-desc">User-centric interfaces that are visually stunning and conversion-optimized. We design experiences that users remember and love.</p><div class="service-arrow">→</div></div>
-    <div class="service-card reveal" style="transition-delay:.3s"><div class="shimmer"></div><div class="service-icon">📐</div><div class="service-title">Wireframing</div><p class="service-desc">Strategic blueprints that map out your product's structure before a single line of code. Save time, reduce revisions, ship faster.</p><div class="service-arrow">→</div></div>
-    <div class="service-card reveal" style="transition-delay:.4s"><div class="shimmer"></div><div class="service-icon">📱</div><div class="service-title">Mobile Applications</div><p class="service-desc">Cross-platform iOS &amp; Android apps with native-level performance and polished interfaces your users will actually enjoy using.</p><div class="service-arrow">→</div></div>
-    <div class="service-card reveal" style="transition-delay:.5s"><div class="shimmer"></div><div class="service-icon">⚡</div><div class="service-title">Performance Optimization</div><p class="service-desc">Speed audits, Core Web Vitals tuning, and SEO enhancements that push your digital presence to the top of the rankings.</p><div class="service-arrow">→</div></div>
+    <div class="service-card reveal" data-service="webdev" tabindex="0" role="button" aria-haspopup="dialog"><div class="shimmer"></div><div class="service-icon" aria-hidden="true">🌐</div><div class="service-title">Web Development</div><p class="service-desc">Custom, high-performance websites built with modern tech stacks. Fast, secure, and fully responsive — crafted exactly to your requirements.</p><div class="service-arrow">→</div></div>
+    <div class="service-card reveal" data-service="aiagents" tabindex="0" role="button" aria-haspopup="dialog" style="transition-delay:.1s"><div class="shimmer"></div><div class="service-icon" aria-hidden="true">🤖</div><div class="service-title">AI Agents</div><p class="service-desc">Intelligent automation agents that handle repetitive tasks, engage customers, generate leads, and supercharge your business workflows.</p><div class="service-arrow">→</div></div>
+    <div class="service-card reveal" data-service="uiux" tabindex="0" role="button" aria-haspopup="dialog" style="transition-delay:.2s"><div class="shimmer"></div><div class="service-icon" aria-hidden="true">🎨</div><div class="service-title">UI/UX Design</div><p class="service-desc">User-centric interfaces that are visually stunning and conversion-optimized. We design experiences that users remember and love.</p><div class="service-arrow">→</div></div>
+    <div class="service-card reveal" data-service="wireframing" tabindex="0" role="button" aria-haspopup="dialog" style="transition-delay:.3s"><div class="shimmer"></div><div class="service-icon" aria-hidden="true">📐</div><div class="service-title">Wireframing</div><p class="service-desc">Strategic blueprints that map out your product's structure before a single line of code. Save time, reduce revisions, ship faster.</p><div class="service-arrow">→</div></div>
+    <div class="service-card reveal" data-service="mobile" tabindex="0" role="button" aria-haspopup="dialog" style="transition-delay:.4s"><div class="shimmer"></div><div class="service-icon" aria-hidden="true">📱</div><div class="service-title">Mobile Applications</div><p class="service-desc">Cross-platform iOS &amp; Android apps with native-level performance and polished interfaces your users will actually enjoy using.</p><div class="service-arrow">→</div></div>
+    <div class="service-card reveal" data-service="performance" tabindex="0" role="button" aria-haspopup="dialog" style="transition-delay:.5s"><div class="shimmer"></div><div class="service-icon" aria-hidden="true">⚡</div><div class="service-title">Performance Optimization</div><p class="service-desc">Speed audits, Core Web Vitals tuning, and SEO enhancements that push your digital presence to the top of the rankings.</p><div class="service-arrow">→</div></div>
   </div>
 </section>
 
@@ -285,16 +400,16 @@
         </div>
       </div>
       <div class="glass-card card-stat"><div class="big-num">98%</div><div class="badge-text">Client satisfaction rate</div></div>
-      <div class="glass-card card-badge"><div class="badge-icon">🏆</div><div class="badge-text">Top-rated agency<br>delivering premium quality</div></div>
+      <div class="glass-card card-badge"><div class="badge-icon" aria-hidden="true">🏆</div><div class="badge-text">Top-rated agency<br>delivering premium quality</div></div>
     </div>
     <div class="reveal-right">
       <div class="section-tag">Why Nexora</div>
       <h2 class="section-title">Where <span class="grad-text">Technology</span> Meets Vision</h2>
       <p class="section-sub">We don't just build products — we build competitive advantages. Every pixel, every line of code, every AI workflow is engineered for impact.</p>
       <div class="about-features">
-        <div class="feature reveal"><div class="feature-icon">🚀</div><div><div class="feature-title">Fast Delivery</div><div class="feature-desc">We move quickly without sacrificing quality. Most projects are delivered ahead of schedule with full documentation.</div></div></div>
-        <div class="feature reveal" style="transition-delay:.1s"><div class="feature-icon">🔒</div><div><div class="feature-title">Secure &amp; Scalable</div><div class="feature-desc">Built with security-first principles and architectures that grow with your business demands effortlessly.</div></div></div>
-        <div class="feature reveal" style="transition-delay:.2s"><div class="feature-icon">💬</div><div><div class="feature-title">Transparent Communication</div><div class="feature-desc">No black boxes. Real-time updates, weekly reports, and open channels keep you informed every step of the way.</div></div></div>
+        <div class="feature reveal"><div class="feature-icon" aria-hidden="true">🚀</div><div><div class="feature-title">Fast Delivery</div><div class="feature-desc">We move quickly without sacrificing quality. Most projects are delivered ahead of schedule with full documentation.</div></div></div>
+        <div class="feature reveal" style="transition-delay:.1s"><div class="feature-icon" aria-hidden="true">🔒</div><div><div class="feature-title">Secure &amp; Scalable</div><div class="feature-desc">Built with security-first principles and architectures that grow with your business demands effortlessly.</div></div></div>
+        <div class="feature reveal" style="transition-delay:.2s"><div class="feature-icon" aria-hidden="true">💬</div><div><div class="feature-title">Transparent Communication</div><div class="feature-desc">No black boxes. Real-time updates, weekly reports, and open channels keep you informed every step of the way.</div></div></div>
       </div>
     </div>
   </div>
@@ -315,93 +430,85 @@
   </div>
 </section>
 
-<!-- PROJECTS -->
+<!-- PROJECTS (coverflow carousel) -->
 <section id="projects" style="background:rgba(17,24,39,.3);">
   <div style="text-align:center;" class="reveal">
     <div class="section-tag">What We've Built</div>
     <h2 class="section-title">Our <span class="grad-text">Projects</span></h2>
-    <p class="section-sub" style="margin:0 auto;">A glimpse of the real-world digital experiences we've crafted — from luxury brands to AI-powered systems.</p>
+    <p class="section-sub" style="margin:0 auto;">Drag, swipe, or use the arrows to browse the real-world digital experiences we've crafted.</p>
   </div>
-  <div class="projects-grid">
 
-    <!-- Project 1: Luxe Nails -->
-    <div class="service-card reveal" style="transition-delay:.1s;">
-      <div class="shimmer"></div>
-      <div class="project-preview" style="background:linear-gradient(135deg,#1a0a10,#3d0a22);border:1px solid rgba(200,150,107,.2);">
-        <div style="text-align:center;">
-          <div style="font-size:2.5rem;margin-bottom:8px;">💅</div>
-          <div style="font-family:'Syne',sans-serif;font-size:1.1rem;font-weight:700;color:#f5d5c0;letter-spacing:2px;">Luxe Nails</div>
-          <div style="font-size:.75rem;color:#c8956b;letter-spacing:3px;margin-top:4px;">&amp; SPA</div>
-        </div>
-        <div class="live-badge" style="background:rgba(200,150,107,.15);border:1px solid rgba(200,150,107,.3);color:#c8956b;">● LIVE</div>
-      </div>
-      <div class="service-title">Luxe Nails & Spa — Premium Salon Website</div>
-      <p class="service-desc" style="margin-bottom:16px;">A fully responsive luxury nail salon website featuring booking system, gallery, team profiles, pricing packages, and live chat widget.</p>
-      <div class="project-tags">
-        <span class="project-tag tag-blue">HTML</span>
-        <span class="project-tag tag-blue">CSS</span>
-        <span class="project-tag tag-blue">JavaScript</span>
-        <span class="project-tag tag-purple">UI/UX Design</span>
-      </div>
-      <a href="https://nails-website-psi.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn-primary" style="font-size:.85rem;padding:10px 20px;position:relative;z-index:99;">View Live <span class="arrow">→</span></a>
+  <div class="cf-wrap reveal">
+    <div class="cf-frame" id="cfFrame" tabindex="0" role="region" aria-label="Project carousel">
+      <div class="cf-track" id="cfTrack"></div>
     </div>
-
-    <!-- Project 2: Coffee Shop -->
-    <div class="service-card reveal" style="transition-delay:.2s;">
-      <div class="shimmer"></div>
-      <div class="project-preview" style="background:linear-gradient(135deg,#0f0a06,#1c1208);border:1px solid rgba(212,164,90,.2);">
-        <div style="text-align:center;">
-          <div style="font-size:2.5rem;margin-bottom:8px;">☕</div>
-          <div style="font-family:'Syne',sans-serif;font-size:1.1rem;font-weight:700;color:#F5DEB3;letter-spacing:2px;">Milstead</div>
-          <div style="font-size:.75rem;color:#D4A45A;letter-spacing:3px;margin-top:4px;">&amp; CO. — SEATTLE</div>
-        </div>
-        <div class="live-badge" style="background:rgba(212,164,90,.15);border:1px solid rgba(212,164,90,.3);color:#D4A45A;">● LIVE</div>
-      </div>
-      <div class="service-title">Milstead & Co. — Artisan Coffee Shop Website</div>
-      <p class="service-desc" style="margin-bottom:16px;">A premium coffee shop website with filterable menu, customer reviews, Google Maps integration, contact form, and elegant dark-themed UI.</p>
-      <div class="project-tags">
-        <span class="project-tag tag-blue">HTML</span>
-        <span class="project-tag tag-blue">CSS</span>
-        <span class="project-tag tag-blue">JavaScript</span>
-        <span class="project-tag tag-purple">Responsive Design</span>
-      </div>
-      <a href="https://coffee-rho-kohl.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn-primary" style="font-size:.85rem;padding:10px 20px;position:relative;z-index:99;">View Live <span class="arrow">→</span></a>
-    </div>
-
-    <!-- Project 3: AI Agent -->
-    <div class="service-card reveal" style="transition-delay:.3s;">
-      <div class="shimmer"></div>
-      <div class="project-preview" style="background:linear-gradient(135deg,#0B0F19,#111827);border:1px solid rgba(59,130,246,.25);">
-        <div style="text-align:center;">
-          <div style="font-size:2.5rem;margin-bottom:8px;">🤖</div>
-          <div style="font-family:'Syne',sans-serif;font-size:1.1rem;font-weight:700;background:linear-gradient(135deg,#3B82F6,#8B5CF6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;letter-spacing:2px;">AI AGENT</div>
-          <div style="font-size:.75rem;color:#9CA3AF;letter-spacing:3px;margin-top:4px;">AUTOMATION SYSTEM</div>
-        </div>
-        <div class="live-badge" style="background:rgba(59,130,246,.15);border:1px solid rgba(59,130,246,.3);color:#3B82F6;">● CONCEPT</div>
-      </div>
-      <div class="service-title">Business Process AI Agent — Workflow Automation</div>
-      <p class="service-desc" style="margin-bottom:16px;">An intelligent AI agent that automates manual business workflows — handling customer support, lead generation, data processing, and reporting 24/7.</p>
-      <div class="project-tags">
-        <span class="project-tag tag-blue">AI / ML</span>
-        <span class="project-tag tag-blue">Automation</span>
-        <span class="project-tag tag-purple">NLP</span>
-        <span class="project-tag tag-purple">API Integration</span>
-      </div>
-      <a onclick="openEmail('AI Agent Project Inquiry','Hi Nexora Team, I am interested in getting an AI Agent built for my business.')" class="btn-primary" style="font-size:.85rem;padding:10px 20px;cursor:pointer;">Get This Built <span class="arrow">→</span></a>
-    </div>
-
+    <button type="button" class="cf-nav cf-nav-prev" id="cfPrev" aria-label="Previous project">‹</button>
+    <button type="button" class="cf-nav cf-nav-next" id="cfNext" aria-label="Next project">›</button>
   </div>
+  <div class="cf-dots" id="cfDots"></div>
+  <div class="cf-caption" id="cfCaption"></div>
 </section>
 
-<!-- CTA -->
+<!-- CTA / CONTACT -->
 <section id="contact" class="cta-section">
   <div class="cta-inner reveal">
     <div class="section-tag" style="display:block;text-align:center;">Let's build together</div>
     <h2>Ready to <span class="grad-text">Level Up</span><br>Your Business?</h2>
     <p>Tell us about your project and we'll craft a custom solution that drives real results. No fluff — just execution.</p>
-    <div class="cta-btns">
-      <a onclick="openEmail('New Project Inquiry','Hi Nexora Team, I would like to start a new project with you.')" class="btn-primary">Start Your Project <span class="arrow">→</span></a>
-      <a onclick="openEmail('New Project Inquiry','Hi Nexora Team, I would like to start a new project with you.')" class="btn-email">📧 nexora.official24.7@gmail.com</a>
+
+    <div class="contact-quick">
+      <a onclick="openEmail('New Project Inquiry','Hi Nexora Team, I would like to start a new project with you.')" class="quick-card">
+        <span class="quick-icon" aria-hidden="true">📧</span>
+        <span class="quick-label">Email us</span>
+        <span class="quick-value">nexora.official24.7@gmail.com</span>
+      </a>
+      <a href="tel:+923012681336" class="quick-card">
+        <span class="quick-icon" aria-hidden="true">🇵🇰</span>
+        <span class="quick-label">Pakistan Desk</span>
+        <span class="quick-value">+92 301 2681336</span>
+      </a>
+      <a href="tel:+18026108405" class="quick-card">
+        <span class="quick-icon" aria-hidden="true">🌍</span>
+        <span class="quick-label">International Desk</span>
+        <span class="quick-value">+1 (802) 610‑8405</span>
+      </a>
+    </div>
+
+    <div class="contact-divider"><span>or send us a message</span></div>
+
+    <div class="whatsapp-form-wrap">
+      <div class="wa-tag">Send a message</div>
+      <h3 class="wa-heading">We'll reply on <span class="grad-text">WhatsApp.</span></h3>
+      <form id="whatsappForm" class="wa-form" novalidate>
+        <div class="wa-row">
+          <div class="wa-field">
+            <label for="waName">Name</label>
+            <input type="text" id="waName" placeholder="Your full name" autocomplete="name" required>
+          </div>
+          <div class="wa-field">
+            <label for="waPhone">Phone (with country code)</label>
+            <input type="tel" id="waPhone" placeholder="03xx xxxxxxx or +1 xxx xxx xxxx" autocomplete="tel" required>
+          </div>
+        </div>
+        <div class="wa-field">
+          <label for="waInterest">Interested In</label>
+          <select id="waInterest">
+            <option>Web Development</option>
+            <option>AI Agents</option>
+            <option>UI/UX Design</option>
+            <option>Wireframing</option>
+            <option>Mobile Applications</option>
+            <option>Performance Optimization</option>
+            <option>Something else</option>
+          </select>
+        </div>
+        <div class="wa-field">
+          <label for="waMessage">Message</label>
+          <textarea id="waMessage" placeholder="Tell us what you're looking for..."></textarea>
+        </div>
+        <button type="submit" class="wa-submit">Send on WhatsApp</button>
+        <p class="wa-note">Pakistani numbers land on our Pakistan desk, everyone else reaches our international desk — either way it opens WhatsApp with your details already filled in.</p>
+      </form>
     </div>
   </div>
 </section>
@@ -417,22 +524,37 @@
     <div class="footer-links"><h4>Company</h4><ul><li><a href="#about">About Us</a></li><li><a href="#process">Our Process</a></li><li><a href="#projects">Projects</a></li><li><a href="#contact">Contact</a></li></ul></div>
     <div class="footer-links"><h4>Contact</h4><ul>
       <li><a onclick="openEmail('New Project Inquiry','Hi Nexora Team, I would like to start a new project with you.')" class="footer-email">📧 nexora.official24.7@gmail.com</a></li>
+      <li><a href="tel:+923012681336" class="footer-phone">📱 +92 301 2681336</a></li>
+      <li><a href="tel:+18026108405" class="footer-phone">📱 +1 (802) 610‑8405</a></li>
       <li><a href="#home" style="color:var(--gray);font-size:.88rem;">24/7 Support Available</a></li>
     </ul></div>
   </div>
   <div class="footer-bottom">
     <p>© 2025 NEXORA. All rights reserved. Crafted with ⚡ by NEXORA.</p>
     <div class="footer-socials">
-      <a href="#" class="social-btn" title="Twitter">𝕏</a>
-      <a href="https://www.instagram.com/nexora24_7/?utm_source=qr&r=nametag" class="social-btn" title="Instagram">IG</a>
-      <a onclick="openEmail('Hello','Hi Nexora Team!')" class="social-btn" title="Email" style="cursor:pointer;">@</a>
+      <a href="#" class="social-btn" title="Twitter" aria-label="Twitter">𝕏</a>
+      <a href="https://www.instagram.com/nexora24_7/?utm_source=qr&r=nametag" target="_blank" rel="noopener noreferrer" class="social-btn" title="Instagram" aria-label="Instagram">IG</a>
+      <a onclick="openEmail('Hello','Hi Nexora Team!')" class="social-btn" title="Email" aria-label="Email" style="cursor:pointer;">@</a>
     </div>
   </div>
 </footer>
 
+</div><!-- /#pageWrap -->
+
+<!-- SERVICE DETAIL MODAL (lives outside #pageWrap so it stays sharp) -->
+<div class="modal-overlay" id="modalOverlay">
+  <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <button type="button" class="modal-close" id="modalClose" aria-label="Close">✕</button>
+    <div class="modal-icon-wrap" id="modalIcon" aria-hidden="true"></div>
+    <h3 class="modal-title" id="modalTitle"></h3>
+    <p class="modal-desc" id="modalDesc"></p>
+    <ul class="modal-highlights" id="modalHighlights"></ul>
+    <a class="btn-primary" id="modalCta" style="cursor:pointer;">Get a Quote <span class="arrow">→</span></a>
+  </div>
+</div>
+
 <script>
 // ── Smart Email Opener ──────────────────────────────────────────────────────
-// Opens Gmail web compose on desktop, falls back to mailto on mobile
 function openEmail(subject, body) {
   var email = 'nexora.official24.7@gmail.com';
   var isMobile = /Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
@@ -478,34 +600,346 @@ animateParticles();
 // ── Tech Orbit ──────────────────────────────────────────────────────────────
 const icons = ['⚛️','🐍','☁️','🔗','🛡️','🚀'];
 const orbit = document.getElementById('techOrbit');
-if (orbit) { icons.forEach((icon, i) => { const angle = (i/icons.length)*2*Math.PI; const r=200; const x=210+r*Math.cos(angle)-20; const y=210+r*Math.sin(angle)-20; const el=document.createElement('div'); el.className='tech-icon'; el.style.left=x+'px'; el.style.top=y+'px'; el.innerHTML=`<span>${icon}</span>`; orbit.appendChild(el); }); }
+if (orbit) { icons.forEach((icon, i) => { const angle = (i/icons.length)*2*Math.PI; const r=200; const x=210+r*Math.cos(angle)-20; const y=210+r*Math.sin(angle)-20; const el=document.createElement('div'); el.className='tech-icon'; el.setAttribute('aria-hidden','true'); el.style.left=x+'px'; el.style.top=y+'px'; el.innerHTML=`<span>${icon}</span>`; orbit.appendChild(el); }); }
 
-// ── Custom Cursor ───────────────────────────────────────────────────────────
+// ── Custom Cursor (event delegation so dynamically added elements — modal, carousel, form — work too) ──
 const dot = document.getElementById('nx-cursor'); const trail = document.getElementById('nx-trail'); const lbl = document.getElementById('nx-label');
 let tx=0,ty=0,mx=0,my=0;
 document.addEventListener('mousemove', e => { mx=e.clientX; my=e.clientY; dot.style.left=mx+'px'; dot.style.top=my+'px'; lbl.style.left=(mx+18)+'px'; lbl.style.top=(my+16)+'px'; });
 (function loop(){ tx+=(mx-tx)*.1; ty+=(my-ty)*.1; trail.style.left=tx+'px'; trail.style.top=ty+'px'; requestAnimationFrame(loop); })();
-document.querySelectorAll('a,button,.service-card,.feature,.step,.glass-card').forEach(el=>{
-  el.addEventListener('mouseenter',()=>{ dot.style.width='20px';dot.style.height='20px';trail.style.width='65px';trail.style.height='65px';lbl.style.opacity='1';lbl.textContent=el.tagName==='A'?'OPEN':'VIEW'; });
-  el.addEventListener('mouseleave',()=>{ dot.style.width='12px';dot.style.height='12px';trail.style.width='36px';trail.style.height='36px';lbl.style.opacity='0'; });
+const HOVERABLE = 'a,button,.service-card,.feature,.step,.glass-card,.cf-card,.cf-nav,.cf-dot,input,select,textarea,.quick-card,.modal-close';
+document.addEventListener('mouseover', e => {
+  const el = e.target.closest(HOVERABLE);
+  if (!el) return;
+  dot.style.width='20px';dot.style.height='20px';trail.style.width='65px';trail.style.height='65px';lbl.style.opacity='1';
+  lbl.textContent = (el.tagName==='A' || el.tagName==='BUTTON') ? 'OPEN' : 'VIEW';
+});
+document.addEventListener('mouseout', e => {
+  const el = e.target.closest(HOVERABLE);
+  if (!el) return;
+  const to = e.relatedTarget && e.relatedTarget.closest ? e.relatedTarget.closest(HOVERABLE) : null;
+  if (to === el) return;
+  dot.style.width='12px';dot.style.height='12px';trail.style.width='36px';trail.style.height='36px';lbl.style.opacity='0';
 });
 document.addEventListener('mousedown',()=>{ dot.style.transform='translate(-50%,-50%) scale(0.65)'; });
 document.addEventListener('mouseup',()=>{ dot.style.transform='translate(-50%,-50%) scale(1)'; });
 
-// ── Service Card Tilt ───────────────────────────────────────────────────────
+// ── Mobile Menu ─────────────────────────────────────────────────────────────
+function toggleMenu(){ document.getElementById('mobileMenu').classList.toggle('open'); }
+
+// ── SERVICE DETAILS + card interactions (dwell-to-hover, click-to-open frozen modal) ──
+const SERVICE_DETAILS = {
+  webdev: {
+    icon: '🌐',
+    title: 'Web Development',
+    desc: 'We design and build custom, high-performance websites from the ground up — no bloated templates, no guesswork. Every site is fast, secure, fully responsive, and built around your exact requirements.',
+    highlights: ['Modern, maintainable code (HTML/CSS/JS or your preferred framework)', 'Mobile-first, fully responsive layouts', 'Fast load times and clean, semantic markup', 'Ongoing support after launch']
+  },
+  aiagents: {
+    icon: '🤖',
+    title: 'AI Agents',
+    desc: 'Intelligent automation agents that take repetitive work off your plate — answering customers, qualifying leads, processing data, and reporting back, around the clock.',
+    highlights: ['Customer support & lead-qualification agents', 'Workflow automation across your existing tools', 'Custom integrations via APIs', '24/7 operation with human hand-off when needed']
+  },
+  uiux: {
+    icon: '🎨',
+    title: 'UI/UX Design',
+    desc: 'User-centric interfaces that look stunning and convert. We map real user journeys before we design a single screen, so every interaction feels intentional.',
+    highlights: ['User research & journey mapping', 'High-fidelity mockups and interactive prototypes', 'Conversion-focused layout decisions', 'Consistent design systems for future scale']
+  },
+  wireframing: {
+    icon: '📐',
+    title: 'Wireframing',
+    desc: 'Strategic blueprints that map out your product\'s structure before a single line of code is written — so revisions happen on paper, not in production.',
+    highlights: ['Low-fidelity to high-fidelity wireframes', 'Clear information architecture', 'Faster stakeholder sign-off', 'Fewer costly revisions during build']
+  },
+  mobile: {
+    icon: '📱',
+    title: 'Mobile Applications',
+    desc: 'Cross-platform iOS & Android apps with native-level performance and interfaces your users will actually enjoy using — built once, running everywhere.',
+    highlights: ['Cross-platform iOS & Android development', 'Native-level performance and smooth animations', 'App Store & Play Store launch support', 'Post-launch updates and maintenance']
+  },
+  performance: {
+    icon: '⚡',
+    title: 'Performance Optimization',
+    desc: 'Speed audits, Core Web Vitals tuning, and SEO enhancements that push your digital presence higher in the rankings and keep visitors from bouncing.',
+    highlights: ['Core Web Vitals & speed audits', 'Image, script and asset optimization', 'On-page SEO fundamentals', 'Ongoing monitoring and reporting']
+  }
+};
+
+const modalOverlay = document.getElementById('modalOverlay');
+const modalIcon = document.getElementById('modalIcon');
+const modalTitle = document.getElementById('modalTitle');
+const modalDesc = document.getElementById('modalDesc');
+const modalHighlights = document.getElementById('modalHighlights');
+const modalCta = document.getElementById('modalCta');
+const modalClose = document.getElementById('modalClose');
+
+function openServiceModal(key){
+  const data = SERVICE_DETAILS[key];
+  if(!data) return;
+  modalIcon.textContent = data.icon;
+  modalTitle.textContent = data.title;
+  modalDesc.textContent = data.desc;
+  modalHighlights.innerHTML = data.highlights.map(h => `<li>${h}</li>`).join('');
+  modalCta.onclick = () => openEmail(data.title + ' Inquiry', `Hi Nexora Team, I'm interested in your ${data.title} service.`);
+  modalOverlay.classList.add('active');
+  document.body.classList.add('modal-open');
+}
+function closeServiceModal(){
+  modalOverlay.classList.remove('active');
+  document.body.classList.remove('modal-open');
+}
+modalClose.addEventListener('click', closeServiceModal);
+modalOverlay.addEventListener('click', e => { if (e.target === modalOverlay) closeServiceModal(); });
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeServiceModal(); });
+
 document.querySelectorAll('.service-card').forEach(card => {
-  card.addEventListener('mousemove', e => { const rect=card.getBoundingClientRect(); const x=((e.clientX-rect.left)/rect.width)*100; const y=((e.clientY-rect.top)/rect.height)*100; card.style.setProperty('--mx',x+'%'); card.style.setProperty('--my',y+'%'); });
-  card.addEventListener('mousemove', e => { if(e.target.closest('a')) return; const rect=card.getBoundingClientRect(); const x=(e.clientX-rect.left)/rect.width-0.5; const y=(e.clientY-rect.top)/rect.height-0.5; card.style.transform=`perspective(800px) rotateY(${x*10}deg) rotateX(${-y*10}deg) translateY(-8px) scale(1.02)`; });
-  card.addEventListener('mouseleave', () => { card.style.transform=''; });
-  card.addEventListener('mousedown', () => { card.style.transform=''; });
-  card.querySelectorAll('a').forEach(link => {
-    link.addEventListener('mouseenter', () => { card.style.transform=''; });
-    link.addEventListener('click', e => { e.stopPropagation(); });
+  let dwellTimer = null;
+
+  card.addEventListener('mouseenter', () => {
+    dwellTimer = setTimeout(() => { card.classList.add('armed'); }, 100);
+  });
+  card.addEventListener('mouseleave', () => {
+    clearTimeout(dwellTimer);
+    card.classList.remove('armed');
+    card.style.transform = '';
+  });
+  card.addEventListener('mousemove', e => {
+    const rect = card.getBoundingClientRect();
+    const px = ((e.clientX - rect.left) / rect.width) * 100;
+    const py = ((e.clientY - rect.top) / rect.height) * 100;
+    card.style.setProperty('--mx', px + '%');
+    card.style.setProperty('--my', py + '%');
+    if (!card.classList.contains('armed')) return;
+    const x = (e.clientX - rect.left) / rect.width - 0.5;
+    const y = (e.clientY - rect.top) / rect.height - 0.5;
+    card.style.transform = `perspective(800px) rotateY(${x*10}deg) rotateX(${-y*10}deg) translateY(-8px) scale(1.02)`;
+  });
+  card.addEventListener('click', () => openServiceModal(card.dataset.service));
+  card.addEventListener('keydown', e => {
+    if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openServiceModal(card.dataset.service); }
   });
 });
 
-// ── Mobile Menu ─────────────────────────────────────────────────────────────
-function toggleMenu(){ document.getElementById('mobileMenu').classList.toggle('open'); }
+// ── PROJECTS DATA + Coverflow carousel (vanilla-JS port of the coverflow interaction pattern) ──
+const PROJECTS = [
+  {
+    bg:'linear-gradient(135deg,#1a0a10,#3d0a22)', border:'rgba(200,150,107,.2)',
+    emoji:'💅', brand:'Luxe Nails', brandColor:'#f5d5c0', sub:'& SPA', subColor:'#c8956b',
+    badge:'LIVE', badgeBg:'rgba(200,150,107,.15)', badgeBorder:'rgba(200,150,107,.3)', badgeColor:'#c8956b',
+    title:'Luxe Nails & Spa — Premium Salon Website',
+    desc:'A fully responsive luxury nail salon website featuring a booking system, gallery, team profiles, pricing packages, and a live chat widget.',
+    tags:[{label:'HTML',cls:'tag-blue'},{label:'CSS',cls:'tag-blue'},{label:'JavaScript',cls:'tag-blue'},{label:'UI/UX Design',cls:'tag-purple'}],
+    link:'https://nails-website-psi.vercel.app/', cta:'View Live'
+  },
+  {
+    bg:'linear-gradient(135deg,#0f0a06,#1c1208)', border:'rgba(212,164,90,.2)',
+    emoji:'☕', brand:'Milstead', brandColor:'#F5DEB3', sub:'& CO. — SEATTLE', subColor:'#D4A45A',
+    badge:'LIVE', badgeBg:'rgba(212,164,90,.15)', badgeBorder:'rgba(212,164,90,.3)', badgeColor:'#D4A45A',
+    title:'Milstead & Co. — Artisan Coffee Shop Website',
+    desc:'A premium coffee shop website with a filterable menu, customer reviews, Google Maps integration, contact form, and an elegant dark-themed UI.',
+    tags:[{label:'HTML',cls:'tag-blue'},{label:'CSS',cls:'tag-blue'},{label:'JavaScript',cls:'tag-blue'},{label:'Responsive Design',cls:'tag-purple'}],
+    link:'https://coffee-rho-kohl.vercel.app/', cta:'View Live'
+  },
+  {
+    bg:'linear-gradient(135deg,#0B0F19,#111827)', border:'rgba(59,130,246,.25)',
+    emoji:'🤖', brand:'AI AGENT', gradBrand:true, sub:'AUTOMATION SYSTEM', subColor:'#9CA3AF',
+    badge:'CONCEPT', badgeBg:'rgba(59,130,246,.15)', badgeBorder:'rgba(59,130,246,.3)', badgeColor:'#3B82F6',
+    title:'Business Process AI Agent — Workflow Automation',
+    desc:'An intelligent AI agent that automates manual business workflows — handling customer support, lead generation, data processing, and reporting 24/7.',
+    tags:[{label:'AI / ML',cls:'tag-blue'},{label:'Automation',cls:'tag-blue'},{label:'NLP',cls:'tag-purple'},{label:'API Integration',cls:'tag-purple'}],
+    cta:'Get This Built', emailSubject:'AI Agent Project Inquiry', emailBody:'Hi Nexora Team, I am interested in getting an AI Agent built for my business.'
+  }
+];
+
+function buildCardHTML(p){
+  const brandClass = p.gradBrand ? 'cf-card-brand grad-text' : 'cf-card-brand';
+  const brandStyle = p.gradBrand ? '' : `style="color:${p.brandColor}"`;
+  return `
+    <div class="cf-card-inner" style="background:${p.bg};">
+      <div class="cf-card-content">
+        <div class="cf-card-emoji" aria-hidden="true">${p.emoji}</div>
+        <div class="${brandClass}" ${brandStyle}>${p.brand}</div>
+        <div class="cf-card-sub" style="color:${p.subColor}">${p.sub}</div>
+      </div>
+      <div class="cf-card-badge" style="background:${p.badgeBg};border:1px solid ${p.badgeBorder};color:${p.badgeColor}">● ${p.badge}</div>
+    </div>`;
+}
+
+class Coverflow {
+  constructor(root, count, opts = {}) {
+    this.root = root;
+    this.count = count;
+    this.rotate = opts.rotate ?? 40;
+    this.depth = opts.depth ?? 0.6;
+    this.perspective = opts.perspective ?? 3;
+    this.falloff = opts.falloff ?? 0.56;
+    this.fade = opts.fade ?? 0.12;
+    this.gap = opts.gap ?? 0.08;
+    this.loop = opts.loop ?? true;
+    this.onChange = opts.onChange || function(){};
+    this.pos = 0; this.target = 0; this.width = 0; this.raf = null; this.selected = 0;
+    this.frame = root.querySelector('.cf-frame');
+    this.track = root.querySelector('.cf-track');
+    this.cards = Array.from(this.track.children);
+    this.bindEvents();
+    this.measure();
+  }
+  indexAt(pos){ return ((Math.round(pos) % this.count) + this.count) % this.count; }
+  paint(){
+    if (!this.width) return;
+    const pitch = this.width * (1 + this.gap);
+    const activeIndex = this.indexAt(this.pos);
+    this.cards.forEach((card, i) => {
+      let offset = i - this.pos;
+      if (this.loop) {
+        offset = ((offset % this.count) + this.count) % this.count;
+        if (offset > this.count / 2) offset -= this.count;
+      }
+      const distance = Math.abs(offset);
+      const ramp = Math.pow(distance, this.falloff);
+      const tilt = Math.min(this.rotate * ramp, 82) * Math.sign(offset);
+      card.style.transform = `translateX(calc(-50% + ${offset*pitch}px)) translateZ(${-this.depth*this.width*ramp}px) rotateY(${-tilt}deg)`;
+      const edge = this.loop ? Math.min(1, Math.max(0, this.count/2 - distance)) : 1;
+      card.style.opacity = String(Math.max(0, 1 - this.fade*distance) * edge);
+      card.style.zIndex = String(100 - Math.round(distance));
+      card.classList.toggle('is-active', i === activeIndex);
+    });
+  }
+  settle(target){
+    if (this.raf) cancelAnimationFrame(this.raf);
+    this.target = target;
+    const sel = this.indexAt(target);
+    if (sel !== this.selected) { this.selected = sel; this.onChange(sel); }
+    const step = () => {
+      const remaining = target - this.pos;
+      if (Math.abs(remaining) < 0.0004) { this.pos = target; this.paint(); this.raf = null; return; }
+      this.pos += remaining * 0.16;
+      this.paint();
+      this.raf = requestAnimationFrame(step);
+    };
+    this.raf = requestAnimationFrame(step);
+  }
+  clamp(pos){ return this.loop ? pos : Math.max(0, Math.min(this.count - 1, pos)); }
+  goTo(index){
+    const target = this.loop ? index + Math.round((this.target - index) / this.count) * this.count : index;
+    this.settle(this.clamp(target));
+  }
+  nudge(by){ this.settle(this.clamp(Math.round(this.target) + by)); }
+  measure(){
+    const card = this.cards[0];
+    if (!card) return;
+    this.width = card.offsetWidth;
+    this.paint();
+  }
+  bindEvents(){
+    const frame = this.frame;
+    let drag = null;
+    frame.addEventListener('pointerdown', e => {
+      if (this.raf) cancelAnimationFrame(this.raf);
+      frame.setPointerCapture(e.pointerId);
+      this.target = this.pos;
+      drag = { id: e.pointerId, x: e.clientX, pos: this.pos, v: 0, t: performance.now() };
+    });
+    frame.addEventListener('pointermove', e => {
+      if (!drag || drag.id !== e.pointerId) return;
+      const pitch = this.width * (1 + this.gap);
+      if (!pitch) return;
+      const now = performance.now();
+      const prev = this.pos;
+      this.pos = this.clamp(drag.pos - (e.clientX - drag.x) / pitch);
+      drag.v = ((this.pos - prev) / Math.max(now - drag.t, 1)) * 1000;
+      drag.t = now;
+      const sel = this.indexAt(this.pos);
+      if (sel !== this.selected) { this.selected = sel; this.onChange(sel); }
+      this.paint();
+    });
+    const end = e => {
+      if (!drag || drag.id !== e.pointerId) return;
+      const carried = Math.max(-2, Math.min(2, drag.v * 0.18));
+      drag = null;
+      this.settle(this.clamp(Math.round(this.pos + carried)));
+    };
+    frame.addEventListener('pointerup', end);
+    frame.addEventListener('pointercancel', end);
+    frame.addEventListener('keydown', e => {
+      if (e.key === 'ArrowLeft') { e.preventDefault(); this.nudge(-1); }
+      else if (e.key === 'ArrowRight') { e.preventDefault(); this.nudge(1); }
+    });
+    window.addEventListener('resize', () => this.measure());
+  }
+}
+
+const cfTrack = document.getElementById('cfTrack');
+PROJECTS.forEach(p => {
+  const card = document.createElement('div');
+  card.className = 'cf-card';
+  card.innerHTML = buildCardHTML(p);
+  cfTrack.appendChild(card);
+});
+
+const cfDotsWrap = document.getElementById('cfDots');
+PROJECTS.forEach((p, i) => {
+  const dot = document.createElement('button');
+  dot.type = 'button';
+  dot.className = 'cf-dot';
+  dot.setAttribute('aria-label', `Go to project ${i + 1}`);
+  dot.addEventListener('click', () => cf.goTo(i));
+  cfDotsWrap.appendChild(dot);
+});
+function syncDots(i){
+  cfDotsWrap.querySelectorAll('.cf-dot').forEach((d, idx) => d.classList.toggle('is-active', idx === i));
+}
+
+const cfCaption = document.getElementById('cfCaption');
+function updateCaption(i){
+  const p = PROJECTS[i];
+  cfCaption.classList.remove('cf-caption-in');
+  void cfCaption.offsetWidth;
+  const ctaHTML = p.link
+    ? `<a href="${p.link}" target="_blank" rel="noopener noreferrer" class="btn-primary">${p.cta} <span class="arrow">→</span></a>`
+    : `<a class="btn-primary email-cta" style="cursor:pointer;" data-subject="${p.emailSubject}" data-body="${p.emailBody}">${p.cta} <span class="arrow">→</span></a>`;
+  cfCaption.innerHTML = `
+    <h3 class="cf-caption-title">${p.title}</h3>
+    <p class="cf-caption-desc">${p.desc}</p>
+    <div class="cf-caption-tags">${p.tags.map(t => `<span class="project-tag ${t.cls}">${t.label}</span>`).join('')}</div>
+    ${ctaHTML}
+  `;
+  cfCaption.classList.add('cf-caption-in');
+}
+cfCaption.addEventListener('click', e => {
+  const el = e.target.closest('.email-cta');
+  if (el) openEmail(el.dataset.subject, el.dataset.body);
+});
+
+const cf = new Coverflow(document.querySelector('.cf-wrap'), PROJECTS.length, {
+  onChange: i => { updateCaption(i); syncDots(i); }
+});
+updateCaption(0);
+syncDots(0);
+document.getElementById('cfPrev').addEventListener('click', () => cf.nudge(-1));
+document.getElementById('cfNext').addEventListener('click', () => cf.nudge(1));
+
+// ── WhatsApp contact form: routes Pakistani numbers to the PK desk, everyone else to the international desk ──
+document.getElementById('whatsappForm').addEventListener('submit', function(e){
+  e.preventDefault();
+  const name = document.getElementById('waName').value.trim();
+  const phoneRaw = document.getElementById('waPhone').value.trim();
+  const interest = document.getElementById('waInterest').value;
+  const message = document.getElementById('waMessage').value.trim();
+  if (!name || !phoneRaw) { return; }
+
+  const digits = phoneRaw.replace(/[^\d+]/g, '');
+  const isPakistan = /^(\+?92|0)/.test(digits);
+  const targetNumber = isPakistan ? '923012681336' : '18026108405';
+
+  let text = `Hi Nexora Team, my name is ${name}.\nPhone: ${phoneRaw}\nInterested in: ${interest}`;
+  if (message) text += `\nMessage: ${message}`;
+
+  const url = `https://wa.me/${targetNumber}?text=${encodeURIComponent(text)}`;
+  window.open(url, '_blank');
+});
 
 // ── Scroll Reveal ───────────────────────────────────────────────────────────
 const revealObs = new IntersectionObserver(entries => {
